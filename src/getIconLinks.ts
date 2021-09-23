@@ -52,7 +52,6 @@ function getIconLinks(rootUrl: string, dom: string) {
     return resolve(rootUrl, iconLink);
   });
 
-  iconLinks.push(resolve(getDomainUrl(rootUrl), "apple-touch-icon.png"));
   return iconLinks;
 }
 
