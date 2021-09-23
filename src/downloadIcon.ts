@@ -16,15 +16,8 @@ async function downloadIcon(iconUrl: string): Promise<Icon | null> {
       responseType: "arraybuffer",
       //'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
     });
-  } catch (error) {
-    if (
-      axios.isAxiosError(error) &&
-      error.response &&
-      error.response.status === 404
-    ) {
-      return null;
-    }
-    throw error;
+  } catch {
+    return null;
   }
 
   const iconData = await iconResponse.data;
