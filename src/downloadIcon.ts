@@ -1,27 +1,27 @@
-const url = require('url');
+import { URL } from "url";
 
-const axios = require('axios').default;
-const fileType = require('file-type');
+import axios from "axios";
+import * as fileType from "file-type";
 
-/**
- * @param {string} siteUrl 
- */
-function getSiteDomain(siteUrl) {
-  return url.parse(siteUrl).hostname;
+import { Icon } from "./index";
+
+function getSiteDomain(siteUrl: string) {
+  return new URL(siteUrl).hostname;
 }
 
-/**
- * @param {string} iconUrl 
- */
-async function downloadIcon(iconUrl) {
+async function downloadIcon(iconUrl: string): Promise<Icon | null> {
   let iconResponse;
   try {
     iconResponse = await axios.get(iconUrl, {
-      responseType: 'arraybuffer',
+      responseType: "arraybuffer",
       //'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
     });
   } catch (error) {
-    if (error.response && error.response.status === 404) {
+    if (
+      axios.isAxiosError(error) &&
+      error.response &&
+      error.response.status === 404
+    ) {
       return null;
     }
     throw error;
@@ -47,4 +47,4 @@ async function downloadIcon(iconUrl) {
   };
 }
 
-module.exports = downloadIcon;
+export default downloadIcon;

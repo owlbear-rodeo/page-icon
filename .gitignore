@@ -44,3 +44,5 @@ gen
 # Test data
 test/*.ico
 test/*.png
+
+dist

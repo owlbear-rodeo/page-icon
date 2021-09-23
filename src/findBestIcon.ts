@@ -1,4 +1,6 @@
-function sortIconsBySize(icons) {
+import { Icon } from "./index";
+
+function sortIconsBySize(icons: Array<Icon>) {
   return icons.sort((a, b) => {
     if (a.size < b.size) {
       return 1;
@@ -8,7 +10,7 @@ function sortIconsBySize(icons) {
   });
 }
 
-function findBestIcon(icons, ext) {
+function findBestIcon(icons: Array<Icon>, ext?: string) {
   const sorted = sortIconsBySize(icons);
   if (ext) {
     for (let icon of sorted) {
@@ -21,4 +23,4 @@ function findBestIcon(icons, ext) {
   return sorted[0];
 }
 
-module.exports = findBestIcon;
+export default findBestIcon;

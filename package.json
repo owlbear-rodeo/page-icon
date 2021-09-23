@@ -6,8 +6,11 @@
     "npm": ">= 6.0.0"
   },
   "description": "Find the best icon for a web page",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc",
     "test": "mocha"
   },
   "author": "Goh Jia Hao",
@@ -18,8 +21,12 @@
     "file-type": "^16.2.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.9.6",
     "chai": "^4.3.0",
-    "mocha": "^8.3.0"
+    "mocha": "^8.3.0",
+    "typescript": "^4.4.3"
   },
   "repository": {
     "type": "git",
