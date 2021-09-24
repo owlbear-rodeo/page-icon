@@ -1,5 +1,5 @@
 {
-  "name": "page-icon",
+  "name": "@owlbear-rodeo/page-icon",
   "version": "0.5.0",
   "engines": {
     "node": ">= 10.0.0",
@@ -13,7 +13,7 @@
     "build": "tsc",
     "test": "ts-mocha test/**/*.ts"
   },
-  "author": "Goh Jia Hao",
+  "author": "Goh Jia Hao, Mitchell McCaffrey",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
@@ -32,10 +32,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nativefier/page-icon.git"
+    "url": "git+https://github.com/owlbear-rodeo/page-icon.git"
   },
   "bugs": {
-    "url": "https://github.com/nativefier/page-icon/issues"
+    "url": "https://github.com/owlbear-rodeo/page-icon/issues"
   },
-  "homepage": "https://github.com/nativefier/page-icon#readme"
+  "homepage": "https://github.com/owlbear-rodeo/page-icon#readme"
 }
