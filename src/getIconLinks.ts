@@ -6,12 +6,6 @@ function hrefIsIcon(href: string) {
   return /((icon.*\.(png|jpg))|(\w+\.ico))/.test(href);
 }
 
-function getDomainUrl(someUrl: string) {
-  const parsedUrl = new URL(someUrl);
-  parsedUrl.pathname = "";
-  return parsedUrl.href;
-}
-
 function linkTagLinks($: CheerioAPI) {
   const links: Array<string> = [];
   $("link").each(function (_, element) {
