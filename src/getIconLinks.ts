@@ -35,12 +35,14 @@ function metaTagLinks($: CheerioAPI) {
   return links;
 }
 
-function getIconLinks(rootUrl: string, dom: string) {
+function getIconLinks(rootUrl: string, dom: string, metaTags: boolean) {
   var $ = cheerio.load(dom);
   let iconLinks: Array<string> = [];
 
   iconLinks = iconLinks.concat(linkTagLinks($));
-  iconLinks = iconLinks.concat(metaTagLinks($));
+  if (metaTags) {
+    iconLinks = iconLinks.concat(metaTagLinks($));
+  }
 
   iconLinks = iconLinks.map((iconLink) => {
     return resolve(rootUrl, iconLink);

@@ -7,6 +7,8 @@ import getPage from "./getPage";
 
 export interface Options {
   ext?: string;
+  /** Set to false to disable open graph images */
+  metaTags: boolean;
 }
 
 export interface Icon {
@@ -28,13 +30,16 @@ function makeHttps(pageUrl: string) {
   return parsed.href;
 }
 
-async function main(pageUrl: string, options: Options = {}): Promise<Icon> {
+async function main(
+  pageUrl: string,
+  options: Options = { metaTags: true }
+): Promise<Icon> {
   const bestWithPref = function (icons: Array<Icon>) {
     return findBestIcon(icons, options.ext);
   };
 
   const dom = await getPage(pageUrl);
-  const iconUrls = getIconLinks(pageUrl, dom);
+  const iconUrls = getIconLinks(pageUrl, dom, options.metaTags);
   const icons = await downloadIcons(iconUrls);
   const result = bestWithPref(icons);
   if (result || isHttps(pageUrl)) {
