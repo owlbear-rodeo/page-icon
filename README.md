@@ -1,7 +1,5 @@
 # Page Icon
 
-[![Build Status](https://github.com/nativefier/page-icon/workflows/ci/badge.svg)](https://github.com/nativefier/page-icon/actions?query=workflow%3Aci)
-
 A library to find the highest resolution website logo for a given url.
 
 This a Javascript implementation of http://stackoverflow.com/a/22007642/5076225.
