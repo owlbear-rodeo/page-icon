@@ -8,7 +8,7 @@ This a Javascript implementation of http://stackoverflow.com/a/22007642/5076225.
 
 ## Installation
 
-Requires Node.js >= 10.
+Requires Node.js >= 16.
 
 ```bash
 $ npm install --save @owlbear-rodeo/page-icon
