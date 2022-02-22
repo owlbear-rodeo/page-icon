@@ -11,13 +11,13 @@ This a Javascript implementation of http://stackoverflow.com/a/22007642/5076225.
 Requires Node.js >= 10.
 
 ```bash
-$ npm install --save page-icon
+$ npm install --save @owlbear-rodeo/page-icon
 ```
 
 ## Usage
 
 ```javascript
-const pageIcon = require('page-icon');
+const pageIcon = require('@owlbear-rodeo/page-icon');
 
 const URL = 'https://www.facebook.com/';
 pageIcon(siteUrl)
