@@ -1,4 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://github.com/owlbear-rodeo/page-icon/workflows/Tests/badge.svg)](https://github.com/owlbear-rodeo/page-icon/actions?query=workflow%3ATests)
 
 # Page Icon
 
